@@ -13,7 +13,7 @@ class TrainsWithOneCoach(TestCase):
     def setUp(self):
         self.train_data_service = Mock(IObtainTrainData)
         self.train_data_service.obtain_data_for_train.return_value = \
-            TrainData(make_raw_train_data(seats=10))
+            TrainData(make_raw_train_data(total_seats=10))
 
         self.booking_reference_service = Mock(IObtainBookingReferences)
         self.booking_reference_service.obtain_booking_reference.return_value =\
@@ -22,17 +22,17 @@ class TrainsWithOneCoach(TestCase):
         self.ticket_office = TicketOffice(self.train_data_service,
                                           self.booking_reference_service)
 
-    def test_reserve_one_seat_in_empty_coach(self):
+    def test_can_reserve_one_seat_in_empty_coach(self):
         self.assertEqual(build_reservation(nb_seats=1),
                          self.ticket_office.reserve(TRAIN_ID, 1))
 
-    def test_reserve_two_seats_in_empty_coach(self):
+    def test_can_reserve_two_seats_in_empty_coach(self):
         self.assertEqual(build_reservation(nb_seats=2),
                          self.ticket_office.reserve(TRAIN_ID, 2))
 
-    def test_reserve_one_seat_in_almost_full_coach(self):
+    def test_cant_reserve_one_seat_in_max_capacity_coach(self):
         self.train_data_service.obtain_data_for_train.return_value = \
-            TrainData(make_raw_train_data(seats=10,
+            TrainData(make_raw_train_data(total_seats=10,
                                           reserved_seats=7,
                                           booking_reference=TEST_BOOKING_REFERENCE))
 
