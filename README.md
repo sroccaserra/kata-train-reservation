@@ -11,6 +11,19 @@ Live implementation of the kata at "L’après-midi du DDD - live coding" (frenc
 
 - <https://www.youtube.com/playlist?list=PLGl1Jc8ErU1xmSImIQ27Biu46C4MQHTfK>
 
+## Status
+
+**WIP**
+
+Next steps:
+
+- [ ] Fixme: the wrong seats are attributed
+- [ ] Design: move serialization-like structure out to train data service adapter
+- [ ] Implement: multi coach trains
+- [ ] Implement: external service providers
+- [ ] Implement: application server
+- [ ] ...
+
 ## Tech details
 
 Tested with [Python 3.4.5](https://www.python.org/download/releases/3.4.5/).
