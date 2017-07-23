@@ -7,7 +7,6 @@ class TicketOffice:
         self.booking_reference_service = booking_reference_service
 
     def reserve(self, train_id, seat_count):
-
         train_data = self.train_data_service.obtain_data_for_train(train_id)
 
         if train_data.remaining_capacity() < seat_count:

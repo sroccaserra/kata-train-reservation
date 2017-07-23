@@ -1,4 +1,6 @@
-.cache
-.python-version
 __pycache__
 *.py[cod]
+
+.cache
+.python-version
+.coverage
