@@ -1,4 +1,4 @@
-from domain.train_data_service import NO_BOOKING_REFERENCE
+from domain.i_obtain_train_data import NO_BOOKING_REFERENCE
 
 
 class TrainData:

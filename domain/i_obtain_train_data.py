@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 NO_BOOKING_REFERENCE = ''
 
 
-class TrainDataService(ABC):
+class IObtainTrainData(ABC):
     @abstractmethod
-    def get_data_for_train(self, train_id):
+    def obtain_data_for_train(self, train_id):
         pass

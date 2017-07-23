@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from domain.train_data import TrainData
-from domain.train_data_service import NO_BOOKING_REFERENCE
+from domain.i_obtain_train_data import NO_BOOKING_REFERENCE
 from test.common import TEST_BOOKING_REFERENCE
 
 
