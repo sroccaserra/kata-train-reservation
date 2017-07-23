@@ -1,5 +1,7 @@
 .PHONY: all test clean requirements
 
+PYTHON ?= python
+
 clean:
 	@find . \( -name \*.pyc -o -name \*.pyo -o -name __pycache__ \) -prune -delete
 
@@ -10,4 +12,4 @@ requirements:
 	@pip install -r requirements.txt
 
 test:
-	@python -m unittest discover --start-directory test
+	@$(PYTHON) -m unittest discover --start-directory test

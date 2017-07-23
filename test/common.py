@@ -1,0 +1,2 @@
+TEST_BOOKING_REFERENCE = '75bcd15'
+TRAIN_ID = 'express_2000'
