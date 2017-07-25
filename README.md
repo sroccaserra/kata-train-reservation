@@ -26,7 +26,7 @@ Next steps:
 
 ## Tech details
 
-Tested with [Python 3.4.5](https://www.python.org/download/releases/3.4.5/).
+Tested with [Python 3.6.2](https://www.python.org/downloads/release/python-362/).
 
 See `Makefile` for more tech details.
 

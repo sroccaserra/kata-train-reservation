@@ -1,9 +1,9 @@
 import math
 
-from domain.i_obtain_train_data import NO_BOOKING_REFERENCE
+NO_BOOKING_REFERENCE = ''
 
 
-class TrainData:
+class TrainInfo:
     def __init__(self, raw_train_data):
         self._raw_seats = raw_train_data['seats'].values()
         self._total_seat_count = len(self._raw_seats)

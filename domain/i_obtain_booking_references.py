@@ -3,5 +3,5 @@ from abc import ABC, abstractmethod
 
 class IObtainBookingReferences(ABC):
     @abstractmethod
-    def obtain_booking_reference(self):
+    def obtain_booking_reference(self) -> str:
         pass
