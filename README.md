@@ -36,9 +36,9 @@ Example of pre-commit hook (`.git/hooks/pre-commit`):
 ```sh
 #!/bin/sh
 
-export PYTEST=~/.pyenv/versions/3.4.5/bin/pytest
-export FLAKE8=~/.pyenv/versions/3.4.5/bin/flake8
+export PYTEST=~/.pyenv/versions/3.6.2/bin/pytest
+export FLAKE8=~/.pyenv/versions/3.6.2/bin/flake8
 
 make lint
-make test
+make test_unit
 ```

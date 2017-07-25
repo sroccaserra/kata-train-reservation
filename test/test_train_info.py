@@ -44,16 +44,16 @@ class TestTrainInfoFreeSeats(TestCase):
     def test_free_seats_in_empty_train(self):
         train_info = TrainInfo(build_seats_data(total_seats=10))
 
-        self.assertEqual(['1A'], train_info.get_some_free_seats(1))
-        self.assertEqual(['1A', '2A'], train_info.get_some_free_seats(2))
+        self.assertEqual(['1A'], train_info.get_some_free_seat_ids(1))
+        self.assertEqual(['1A', '2A'], train_info.get_some_free_seat_ids(2))
 
     def test_free_seats_in_non_empty_train(self):
         train_info = TrainInfo(build_seats_data(total_seats=10,
                                                 reserved_seats=1,
                                                 booking_reference=TEST_BOOKING_REFERENCE))
 
-        self.assertEqual(['2A'], train_info.get_some_free_seats(1))
-        self.assertEqual(['2A', '3A'], train_info.get_some_free_seats(2))
+        self.assertEqual(['2A'], train_info.get_some_free_seat_ids(1))
+        self.assertEqual(['2A', '3A'], train_info.get_some_free_seat_ids(2))
 
 
 def build_seats_data(total_seats, reserved_seats=0, booking_reference=NO_BOOKING_REFERENCE):

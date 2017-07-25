@@ -1,2 +1,4 @@
-TEST_BOOKING_REFERENCE = '75bcd15'
-TRAIN_ID = 'express_2000'
+from domain.train_info import BookingReference, TrainId
+
+TEST_BOOKING_REFERENCE: BookingReference = '75bcd15'
+TRAIN_ID: TrainId = 'express_2000'

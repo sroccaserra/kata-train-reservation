@@ -1,6 +1,11 @@
 import math
 
-NO_BOOKING_REFERENCE = ''
+from typing import NewType
+
+BookingReference = NewType('BookingReference', str)
+TrainId = NewType('TrainId', str)
+
+NO_BOOKING_REFERENCE: BookingReference = ''
 
 
 class TrainInfo:
@@ -17,14 +22,18 @@ class TrainInfo:
     def can_reserve_seats(self, seat_count) -> bool:
         return self._max_capacity >= self.reserved_seat_count() + seat_count
 
-    def get_some_free_seats(self, seat_count):
+    def get_some_free_seat_ids(self, seat_count):
         free_seats = self._free_seats()
-        return [seat['seat_number'] + seat['coach'] for seat in free_seats[:seat_count]]
+        return [_site_id(seat) for seat in free_seats[:seat_count]]
 
     def _free_seats(self):
         return [raw_seat for raw_seat in self._raw_seats_data if
-                is_free(raw_seat)]
+                _is_free(raw_seat)]
 
 
-def is_free(raw_seat):
+def _site_id(raw_seat):
+    return raw_seat['seat_number'] + raw_seat['coach']
+
+
+def _is_free(raw_seat):
     return raw_seat['booking_reference'] == NO_BOOKING_REFERENCE
