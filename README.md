@@ -17,7 +17,6 @@ Live implementation of the kata at "L’après-midi du DDD - live coding" (frenc
 
 Next steps:
 
-- [ ] Fixme: the wrong seats are attributed
 - [ ] Design: move serialization-like structure out to train data service adapter
 - [ ] Implement: multi coach trains
 - [ ] Implement: external service providers

@@ -6,14 +6,14 @@ from domain.ticket_office import TicketOffice
 from domain.train_info import TrainInfo, NO_BOOKING_REFERENCE
 from domain.i_obtain_train_info import IObtainTrainInfo
 from test.common import TRAIN_ID, TEST_BOOKING_REFERENCE
-from test.test_train_info import make_raw_train_data
+from test.test_train_info import build_seats_data
 
 
 class TrainsWithOneCoach(TestCase):
     def setUp(self):
         self.train_data_service = Mock(IObtainTrainInfo)
         self.train_data_service.obtain_info_for_train.return_value = \
-            TrainInfo(make_raw_train_data(total_seats=10))
+            TrainInfo(build_seats_data(total_seats=10))
 
         self.booking_reference_service = Mock(IObtainBookingReferences)
         self.booking_reference_service.obtain_booking_reference.return_value =\
@@ -33,9 +33,9 @@ class TrainsWithOneCoach(TestCase):
 
     def test_cant_reserve_one_seat_in_max_capacity_coach(self):
         self.train_data_service.obtain_info_for_train.return_value = \
-            TrainInfo(make_raw_train_data(total_seats=10,
-                                          reserved_seats=7,
-                                          booking_reference=TEST_BOOKING_REFERENCE))
+            TrainInfo(build_seats_data(total_seats=10,
+                                       reserved_seats=7,
+                                       booking_reference=TEST_BOOKING_REFERENCE))
 
         self.assertEqual(build_empty_reservation(),
                          self.ticket_office.reserve(TRAIN_ID, 1))
