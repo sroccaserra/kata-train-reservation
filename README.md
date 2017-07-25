@@ -19,7 +19,6 @@ Next steps:
 
 - [ ] Design: move serialization-like structure out to train data service adapter
 - [ ] Implement: multi coach trains
-- [ ] Implement: external service providers
 - [ ] Implement: application server
 - [ ] ...
 
@@ -28,6 +27,16 @@ Next steps:
 Tested with [Python 3.6.2](https://www.python.org/downloads/release/python-362/).
 
 See `Makefile` for more tech details.
+
+## Running unit tests
+
+    $ make test_unit
+
+## Running integration tests
+
+Note: requires the two external HTTP services to run. Implementations of these services are available in the original kata by @emilybache.
+
+    $ make test_integration
 
 ### Pre-commit hook
 

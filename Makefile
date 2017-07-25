@@ -7,7 +7,7 @@ clean:
 	@find . \( -name \*.pyc -o -name \*.pyo -o -name __pycache__ \) -prune -delete
 
 coverage:
-	@$(PYTEST) --cov=domain --cov=infrastructure test
+	@$(PYTEST) -m 'not integration' --cov=domain test
 
 lint:
 	@$(FLAKE8) domain infrastructure test
