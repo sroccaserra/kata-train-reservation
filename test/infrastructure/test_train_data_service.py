@@ -4,7 +4,7 @@ from unittest.mock import Mock
 import requests
 from pytest import mark
 
-from infrastructure.train_data_service import TrainDataService
+from infrastructure.service_providers.train_data_service import TrainDataService
 from test.common import TRAIN_ID
 
 

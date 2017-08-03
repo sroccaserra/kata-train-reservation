@@ -2,7 +2,7 @@ from unittest import TestCase
 
 from pytest import mark
 
-from infrastructure.booking_reference_service import BookingReferenceService
+from infrastructure.service_providers.booking_reference_service import BookingReferenceService
 
 
 @mark.integration

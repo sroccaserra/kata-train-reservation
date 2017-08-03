@@ -17,9 +17,12 @@ Live implementation of the kata at "L’après-midi du DDD - live coding" (frenc
 
 Next steps:
 
-- [ ] Design: move serialization-like structure out to train data service adapter
+- [ ] Implement: call reserve method on train data service
+- [ ] Test: make an end to end test
+- [ ] Change: make Web application respond to POST instead of GET
 - [ ] Implement: multi coach trains
-- [ ] Implement: application server
+- [ ] Design: move serialization-like structure out to train data service adapter
+- [ ] Implement: avoid all error 500s
 - [ ] ...
 
 ## Tech details

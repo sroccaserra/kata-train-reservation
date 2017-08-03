@@ -2,6 +2,7 @@
 
 PYTEST ?= pytest
 FLAKE8 ?= flake8
+FLASK ?= flask
 
 clean:
 	@find . \( -name \*.pyc -o -name \*.pyo -o -name __pycache__ \) -prune -delete
@@ -14,6 +15,10 @@ lint:
 
 requirements:
 	@pip install -r requirements.txt
+
+run:
+	@PYTHONPATH="$(PYTHONPATH):./infrastructure" FLASK_APP=infrastructure/application/app.py \
+	$(FLASK) run
 
 test_integration:
 	@$(PYTEST) -m 'integration' test
